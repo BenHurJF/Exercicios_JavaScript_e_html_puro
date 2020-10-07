@@ -1,0 +1,47 @@
+          <!DOCTYPE html>
+          <html>
+          <head>
+          	<title>05-Graus Farenheit p/ Celsius</title>
+
+          	<!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          	MATRICULA: 201902501901
+          	Exercicio 05
+
+          	Faça um programa em JavaScript e HTML que peça a temperatura em graus Farenheit para o usuário, transforme e mostre a temperatura em graus Celsius. Fórmula: Celsius = (5 * (Farenheit -32) / 9).
+          	-->
+
+       <script type="text/javascript">
+          		 function convertGraus() 
+               {
+          		 	var farenheit = document.getElementById('FarenheitDigit').value;
+          		 	var celsius = (5 * (farenheit -32) / 9);
+          		 	celsius = parseFloat(celsius.toFixed(1));
+
+          		 	document.getElementById('pResult').innerHTML = 'Convertido para Celsius: ' + (celsius);
+          		 }
+        </script>
+
+       <style type="text/css">
+       	    body {
+       	  	background-color: #483D8B;
+       	  	padding: 10px;
+       	  	margin: 10px;
+       	    }
+         	.fundoLaranja{
+       		background-color: #DEB887;
+       	    }
+       </style>
+          </head>
+          <body>
+            <div class="fundoLaranja"><h4>Conversao de graus Farenheit para Celsius</h4></div>
+            
+            <h4>
+            <p>Digite a temperatura em Farenheit: &nbsp;&nbsp;<input type="text" size="3" id="FarenheitDigit" autofocus></p>
+
+            <p>Saida em graus Celsius:  &nbsp;&nbsp; <button type="button" id="botaoConvert" onclick="convertGraus();">Converter</button></p>
+            <p id="pResult"></p>
+            
+        </h4>
+          </body>
+          </html>
+          

@@ -1,0 +1,64 @@
+	   <!DOCTYPE html>
+	   <html>
+	   <head>
+	   	<title>07-Gasolina</title>
+
+	   	<!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          	 MATRICULA: 201902501901
+          	 Exercicio 07
+
+          	 Faça um programa em JavaScript e HTML que peça o valor da gasolina e do álcool de um posto e diga qual é o combustível mais vantajoso abastecer, sabendo que somente é vantagem abastecer álcool se o preço do mesmo é menor ou igual a 70% do valor da gasolina
+          -->
+
+         <script type="text/javascript">
+         	
+         	function Combustivel() 
+         	{
+               var gasol = document.getElementById('txtGasol').value;
+               var alcool = document.getElementById('txtAlcool').value;
+
+               var condicaoAlcool = (gasol * (100-30) /100);
+               
+               if ( alcool <=condicaoAlcool ) {
+                 document.getElementById('pResult').innerHTML =  'Gasolina R$' + (gasol) + '<br/>' + 'Alcool R$' + (alcool) + '<br/>' + 'Alcool e a melhor opcao de Combustivel';
+               }
+               else if ( gasol > condicaoAlcool ) {
+                  document.getElementById('pResult').innerHTML = 'Gasolina R$' + (gasol) + '<br/>' + 'Alcool R$' + (alcool) + '<br/>' + 'Gasolina e a melhor opcao de Combustivel';
+               }
+               else {
+               	  document.getElementById('pResult').innerHTML = 'Campos invalidos';
+               }
+         	}
+         </script>
+
+       <style type="text/css">
+       	  body {
+       	   background-color: #483D8B;
+       	   padding: 10px;
+       	   margin: 10px;
+       	   }
+          .fundoLaranja{
+       		background-color: #DEB887;
+       	  }  
+       	  .red{
+            color: #D3D3D3;
+       	  }
+       </style>
+	   </head>
+	   
+	   <body>
+
+	       <div class="fundoLaranja"><h3>Combustivel mais vantajoso para abastecer</h3></div>
+           
+           <h5 class="red">somente numeros - USE "." para centavos.</h5>
+        <h4>
+	       <p>Valor da gasolina:&nbsp;&nbsp; R$<input type="text" size="3" id="txtGasol" autofocus></p> 
+           <p>Valor do alcool:&nbsp;&nbsp; R$<input type="text" size="3" id="txtAlcool" autofocus></p>
+           
+           <p>Resultado:&nbsp;&nbsp; <button type="button" onclick="Combustivel();">Exibir</button></p><br/>
+
+           <p id="pResult"></p>
+        </h4>
+	   </body>
+	   </html>
+	    

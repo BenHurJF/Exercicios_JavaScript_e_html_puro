@@ -1,0 +1,89 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+        <title>Nome-Nota-Aluno</title>
+
+        <!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          MATRICULA: 201902501901
+          Exercicio 03
+
+           Faça um programa em JavaScript e HTML que leia o nome do aluno e as três notas de uma disciplina. Ao clicar no botão para ver a média, o sistema deve escreva o nome do aluno, sua média e seu conceito final, sabendo-se que:
+
+	      - Média abaixo de 4 pontos: "Reprovado";
+		  - Média entre 4,1 e 5,9 pontos : "Recuperação Final";
+		  - Média acima de 9 pontos: "Aprovado";
+		-->
+
+		<script type="text/javascript">
+
+			function conceitoNota() 
+		  {
+               var nomeAluno = document.getElementById('txtNome').value;
+
+			   var nota1 = document.getElementById('txtNota1').value;
+			   nota1 = parseFloat(nota1.replace(',','.'));
+
+			   var nota2 = document.getElementById('txtNota2').value;
+			   nota2 = parseFloat(nota2.replace(',','.'));
+
+			   var nota3 = document.getElementById('txtNota3').value;
+			   nota3 = parseFloat(nota3.replace(',','.'));
+
+		     var somaNota = (nota1 + nota2 + nota3);
+		     var mediaNota = (somaNota / 3);
+
+               if (mediaNota <= 4) {
+               document.getElementById('pResult').innerHTML = (nomeAluno) + ' sua media foi: ' + (mediaNota) + ', Reprovado.';
+               }
+               else if (mediaNota >= 4.1 && mediaNota <= 5.9) {
+               document.getElementById('pResult').innerHTML = (nomeAluno) + ' sua media foi: ' + (mediaNota) + ', Recuperação final.';
+               }
+               else if (mediaNota >= 9 || mediaNota >= 6) {
+               document.getElementById('pResult').innerHTML = (nomeAluno) + ' sua media foi: ' + (mediaNota) + ', Aprovado.';
+               }
+               else {
+               	document.getElementById('pResult').innerHTML = 'campos invalidos';
+               }
+           }
+
+		</script>
+        
+        <style type="text/css"> 
+        	body {
+        	 background-color: #9370DB;
+			 padding: 10px;
+			 margin: 10px;
+        	}
+        	.bloco{
+        		background-color: #DEB887;
+        		margin: 5px;
+        		width: 500px;
+        	}
+        </style>
+		
+	</head>
+	<body>
+
+      <div class="bloco">
+        <p><h3>Digite as 3 notas da Disciplina Tecnologia para internet II</h3></p> 
+        <p><h3>Para saber a Media e seu conceito</h3></p>
+      </div>
+        
+        <h2>Verificacao de media Disciplina Tec. Internet II</h2>
+
+		<div><h3>Preencha os campos para ver sua media e conceito: </h3></div>
+
+        <h4>Seu Nome: &nbsp;&nbsp; <input type="text" id="txtNome" value="" autofocus> </h4>
+    	<h4>Nota 1: &nbsp;&nbsp;<input type="text" size="1.5" id="txtNota1" value="" autofocus> </h4>
+    	<h4>Nota 2: &nbsp;&nbsp;<input type="text" size="1.5" id="txtNota2" value="" autofocus> </h4>
+    	<h4>Nota 3: &nbsp;&nbsp;<input type="text" size="1.5" id="txtNota3" value="" autofocus> </h4>
+    	 <br/>
+    	<button type="button" onclick="conceitoNota();">Exibir Conceito</button>
+    	<br/>
+
+    	<h3>Resultado :</h3>
+    	<p id="pResult"></p>
+   
+	</body>
+	</html>
+	

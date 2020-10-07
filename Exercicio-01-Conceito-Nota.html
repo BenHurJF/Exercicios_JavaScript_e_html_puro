@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01-Conceito Nota</title>
+     <!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          MATRICULA: 201902501901
+          Exercicio 01
+ 
+          :) Tudo passa, na dificuldade e derrota aprendemos
+           a ser mais fortes!!!!
+
+          Crie um programa em JavaScript e HTML onde o usuário digita uma nota entre 0 e 10. A saída do programa deve mostrar o conceito desta nota baseado nos critérios abaixo:
+          - Notas abaixo de 4,5: "CONCEITO F";
+          - Notas entre 4,5 e 4,9: "CONCEITO D";
+          - Notas entre 5,0 e 6,9: "CONCEITO C";
+          - Notas entre 7,0 e 8,9: "CONCEITO B";
+          - Notas entre 9,0 e 10,0: "CONCEITO A";
+      -->
+
+	
+
+	<script type="text/javascript">
+		function conceitoNota() 
+		{
+			var nota = document.getElementById('txtNota').value;
+			nota = parseFloat(nota.replace(',','.'));
+
+		   if (nota >= 4.5 && nota <= 4.9)
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>CONCEITO D</strong';
+			}
+			else if (nota >= 5.0 && nota <= 6.9)
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>CONCEITO C</strong>';
+			}
+			else if (nota >= 7.0 && nota <= 8.9)
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>CONCEITO B</strong>';
+			}
+			else if (nota >= 9.0 && nota <= 10.0)
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>CONCEITO A</strong>';
+			}
+			else if (nota <= 4.4)
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>CONCEITO F</strong>';
+			}
+			else
+			{
+               document.getElementById('pResultado').innerHTML = '<strong>Nota Invalida</strong>';  
+			}
+
+		}
+	</script>
+
+
+	<style type="text/css">
+		body {
+			background-color: #836FFF;
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Verificacao de notas</h2>
+	<div><h3>Digite sua nota para saber seu conceito (A,B,C,D,F) </h3></div>
+
+    <input type="text" id="txtNota" autofocus>
+    <br/>
+    <br/>
+    <button type="button" onclick="conceitoNota();"><h3>Exibir Conceito</h3></button>
+    <br/>
+
+    <h3>Resultado :</h3>
+    <p id="pResultado"></p>
+   
+</body>
+</html>

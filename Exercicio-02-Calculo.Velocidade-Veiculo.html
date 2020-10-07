@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>02-Calculo Velocidade</title>
+     <!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          MATRICULA: 201902501901
+          Exercicio 02 
+
+          Crie um programa em JavaScript e HTML para calcular a velocidade média, em km/h, de um veículo. A fórmula da velocidade média é: vm = e/t, onde:
+
+          vm = velocidade média (em km/h);
+          e = espaço percorrido em km;
+          t = tempo, em horas, para percorrer aquele espaço;
+     -->
+
+	
+
+	<script type="text/javascript">
+		function verificarVelocidade() 
+		{
+			var espaco1 = parseFloat(document.getElementById('txtEspaco').value);
+			var tempo1 = parseFloat(document.getElementById('txtTempo').value);
+			
+			var velocidadeMedia = (espaco1 /(tempo1));
+
+            if (velocidadeMedia) 
+            {
+			document.getElementById('pResult').innerHTML = 'velocidade Media: ' + (velocidadeMedia) + ' km/h';
+	    }
+	}
+	</script>
+
+	<style type="text/css">
+		.menu {
+			background-color: #DEB887;
+		}
+		body {
+			background-color: #9370DB;
+			padding: 10px;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h3 class="menu">Calcular velocidade media de um veiculo em km/h</h3>
+
+    <div>Espaco percorrido em km:&nbsp;&nbsp;<input type="text" size="2" id="txtEspaco" autofocus> </div><br/>
+    <div>Tempo em hrs para percorrer:&nbsp;&nbsp;<input type="text" size="2" id="txtTempo" autofocus> </div><br/>
+
+    <button type="button" onclick="verificarVelocidade();">Calcular</button>
+
+    <h3>Velocidade media do veiculo:</h3>
+  
+    <p id="pResult"></p>
+</body>
+</html>

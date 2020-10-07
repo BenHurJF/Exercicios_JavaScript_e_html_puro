@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>08-IMC Usuario</title>
+
+	<!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          	 MATRICULA: 201902501901
+          	 Exercicio 08
+
+	          Faça um programa em JavaScript e HTML que calcule o IMC - Índice de Massa Corporal de uma pessoa e depois mostre em qual categoria (veja tabela abaixo)esta pessoa se encontra. 
+
+			  Fórmula de cálculo do IMC = p/(a²), onde:
+			  p = peso em kg;
+			  a = altura em metros.
+
+			  Tabela de saúde:
+			  Até 18,5 - Abaixo do peso
+			  De  18,5 - 24,9 - Saudável
+			  De  25,0 - 29,9 - Sobrepeso
+			  De  30,0 - 39,9 - Obeso
+			  Acima de 40 - Extremo ou alto risco de obesidade	
+	         -->
+
+         <script type="text/javascript">
+         	
+         	function verificarIMC() 
+         	{
+         		var pesoUser = document.getElementById('txtPeso').value;
+         		var alturaUser = document.getElementById('txtAltura').value;
+                
+                var calculoALT = (alturaUser * alturaUser);
+         		var calculoIMC = (pesoUser / calculoALT);
+         		calculoIMC = parseFloat(calculoIMC.toFixed(2));
+
+         		if (calculoIMC < 18.5) {
+                document.getElementById('pResult').innerHTML = 'IMC: ' + (calculoIMC) + ' Abaixo do peso!';
+         		}
+         		else if (calculoIMC >= 18.5 && calculoIMC < 24.9) {
+                document.getElementById('pResult').innerHTML = 'IMC: ' + (calculoIMC) + ' Saudavel!';
+         		}
+         		else if (calculoIMC >= 25.0 && calculoIMC < 29.9) {
+                document.getElementById('pResult').innerHTML = 'IMC: ' + (calculoIMC) + ' Sobrepeso!';
+         		}
+         		else if (calculoIMC >= 30.0 && calculoIMC < 39.9) {
+                document.getElementById('pResult').innerHTML = 'IMC: ' + (calculoIMC) + ' Obeso!';
+         		}
+         		else if (calculoIMC >= 40) {
+                document.getElementById('pResult').innerHTML = 'IMC: ' + (calculoIMC) + ' Extremo ou alto risco de obesidade!';
+         		}
+         		else {
+                document.getElementById('pResult').innerHTML = 'erro, tente novamente';
+         		}
+         	}
+
+         </script>
+
+         <style type="text/css">
+         	body {
+       	   background-color: #7B68EE;
+       	   padding: 10px;
+       	   margin: 10px;
+       	   }
+          .fundoLaranja{
+       		background-color: #DEB887;
+       	  }  
+       	  .corClara{
+            color: #D3D3D3;
+       	  }
+       	  .caixa {
+            background: #DEB887;
+            width: 210px;
+            height: 180px;
+            color: black;
+            padding-top: 1px;
+         }
+         #relativo {
+            position: relative;
+            left: 288px;
+            top: -119px;
+         }
+         </style>
+</head>
+<body>
+	<div class="fundoLaranja"><h3>Verificar seu Índice de Massa Corporal</h3></div>
+
+	<p class="corClara">USE "." para peso e altura</p>
+
+    <h4>
+	<p>Digite seu Peso em kg: &nbsp;&nbsp;<input type="text" size="2" id="txtPeso"></p>
+	<p>Digite sua Altura em metros: &nbsp;&nbsp;<input type="text" size="2" id="txtAltura"></p>
+
+	<button onclick="verificarIMC();" id="botaoIMC">Calcular IMC</button>
+    
+
+    <div id="relativo" class="caixa">
+    	<h4>&nbsp;&nbsp;Tabela de saúde:<br/><br/>
+		 &nbsp;&nbsp; Até 18,5 - Abaixo do peso<br/>
+		 &nbsp;&nbsp; De  18,5 - 24,9 - Saudável<br/>
+		 &nbsp;&nbsp; De  25,0 - 29,9 - Sobrepeso<br/>
+		 &nbsp;&nbsp; De  30,0 - 39,9 - Obeso<br/>
+		 &nbsp;&nbsp; Acima de 40 - Extremo ou &nbsp;&nbsp;&nbsp;alto risco de obesidade
+		</h4>
+	</div>
+
+   <p class="fundoLaranja" id="pResult"></p>
+
+   </h4>
+</body>
+</html>       
+
+        

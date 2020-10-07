@@ -1,0 +1,85 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+
+        <!-- NOME: BEN-HUR JEFFER FERREIRA DE SOUZA
+          MATRICULA: 201902501901
+          Exercicio 04
+
+			Faça um programa em JavaScript e HTML para calcular o preço final de um produto dada as seguintes condições:
+			- Se o pagamento for à vista, tem desconto de 5%;
+			- Se o pagamento for parcelado em 3 vezes deve ser dado um acréscimo de 10% no total a ser pago;
+			- Se o parcelamento for em 5 vezes, o acréscimo será de 20%.
+		    O seu programa deve mostrar o valor final do produto. Se for à vista o valor de cada prestação. 
+		-->
+
+       <script type="text/javascript">
+
+       	    function botaoAVista() 
+       	    {
+       	   	  var nomeProd = document.getElementById('produto').value;
+              var valorProd = document.getElementById('valorProduto').value;
+              valorProd = parseFloat(valorProd.replace(",","."));
+              valorProd = parseFloat(valorProd.toFixed(3.5));
+       
+              var pagAVista = (valorProd * (100-5) /100);
+
+              document.getElementById('pResult').innerHTML = '<h3>' + 'Seu produto: ( ' + (nomeProd) + ' )' + ' vai custar R$' + (pagAVista) + ' a VISTA' + '</h3>';
+       	   }
+
+       	    function botaoTresVZS() 
+       	    {
+       	      var nomeProd = document.getElementById('produto').value;
+              var valorProd = document.getElementById('valorProduto').value;
+              valorProd = parseFloat(valorProd.replace(',','.'));
+              valorProd = parseFloat(valorProd.toFixed(3.5));
+            
+              var parceladoTres = (valorProd * (100+10) /100);
+
+              document.getElementById('pResult').innerHTML = '<h3>' + 'Seu produto: ( ' + (nomeProd) + ' )' + ' vai custar R$' + (parceladoTres) + ' Parcelado em 3x' + '</h3>';
+       	   }
+
+       	    function botaoCincoVZS() 
+       	    {
+       	   	  var nomeProd = document.getElementById('produto').value;
+              var valorProd = document.getElementById('valorProduto').value;
+              valorProd = parseFloat(valorProd.replace(',','.'));
+              valorProd = parseFloat(valorProd.toFixed(3.5));
+            
+              var parceladoCinco = (valorProd * (100+20) /100);
+
+              document.getElementById('pResult').innerHTML = '<h3>' + 'Seu produto: ( ' + (nomeProd) + ' )' + ' vai custar R$' + (parceladoCinco) + ' Parcelado em 5x' + '</h3>';
+       	   }
+
+       </script>
+
+       <style type="text/css">
+       	body{
+       		background-color: #483D8B;
+       		padding: 10px;
+       		margin: 10px;
+       	}
+       	.fundoLaranja{
+       		background-color: #DEB887;
+       	}
+       </style>
+	</head>
+	<body>
+	   <div class="fundoLaranja"><h3>Calcular preco final de um produto</h3></div>
+       
+       <h4>Nome do produto:&nbsp;&nbsp; <input size="12" type="text" id="produto" autofocus></h4>
+       <h4>Valor produto:&nbsp;&nbsp; <input size="6" type="text" id="valorProduto" autofocus> (sem '.' e ',')</h4>
+
+	   <div class="fundoLaranja"><h3>Condicoes de pagamento:</h3></div>
+	  
+	   <p><h4>Pagamento a vista com 5% de desconto: &nbsp;&nbsp;<button type="button" onclick="botaoAVista();">A Vista</button></h4></p>
+	   <p><h4>Parcelado em 3x: (+10%)  &nbsp;&nbsp;<button type="button" onclick="botaoTresVZS();" >3 Vezes</button></h4></p>
+	   <p><h4>Parcelado em 5x: (+20%)  &nbsp;&nbsp;<button type="button" onclick="botaoCincoVZS();">5 Vezes</button></h4></p>
+
+       <div class="fundoLaranja"><h3>Resultado preco final:</h3></div>
+       <p id="pResult"></p>
+
+	</body>
+	</html>
+	
